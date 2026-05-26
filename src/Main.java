@@ -9,7 +9,7 @@ public class Main {
         System.out.println("===== STUDENT MANAGEMENT SYSTEM =====");
 
         // Undergraduate student input
-        System.out.print("Enter undergraduate student name: ");
+        System.out.print("Enter Undergraduate Student Name: ");
         String ugName = input.nextLine();
 
         UndergraduateStudent ug =
@@ -21,7 +21,7 @@ public class Main {
                 );
 
         // Graduate student input
-        System.out.print("Enter graduate student name: ");
+        System.out.print("Enter Graduate Student Name: ");
         String gName = input.nextLine();
 
         GraduateStudent grad =
@@ -45,7 +45,7 @@ public class Main {
         s2.displayInfo();
 
         // Static member
-        System.out.println("\nTotal Students Calculated: "
+        System.out.println("\nTotal Students Evaluated: "
                 + Student.getTotalStudents());
 
         // Course object
