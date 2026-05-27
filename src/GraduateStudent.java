@@ -5,12 +5,12 @@ public class GraduateStudent extends Student {
     // Constructor
     public GraduateStudent(
             String name,
-            int id,
+            int Studentid,
             double grade,
             String researchTopic
     ) {
 
-        super(name, id, grade);
+        super(name, Studentid, grade);
 
         this.researchTopic = researchTopic;
     }
@@ -19,7 +19,7 @@ public class GraduateStudent extends Student {
     @Override
     public void displayInfo() {
 
-        super.displayInfo();
+        super.displayInfo();   // reuses Student's display code
 
         System.out.println("Research Topic: "
                 + researchTopic);

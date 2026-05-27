@@ -20,13 +20,13 @@ public class Main {
         double grade = rand.nextInt(101);
 
         // Convert number grade to letter grade
-        String letterGrade;
+        String letterGrade = "";
         if (grade >= 90)      letterGrade = "A";
         else if (grade >= 80) letterGrade = "B";
         else if (grade >= 70) letterGrade = "C";
         else if (grade >= 60) letterGrade = "D";
         else if (grade >= 50) letterGrade = "F";
-        else                  letterGrade = "NG";
+        else if  (grade <=50) letterGrade = "NG";
 
         System.out.println("\nHello, " + name + "! Let's pull up your details...");
 
@@ -47,7 +47,7 @@ public class Main {
             System.out.println("\nTotal Students Registered So Far: " + Student.getTotalStudents());
 
         } else {
-            System.out.println("\nOops! That wasn't a valid option. Please enter 'u' for undergraduate or 'g' for graduate.");
+            System.out.println("\nOops That wasn't a valid option. Please enter 'u' for undergraduate or 'g' for graduate.");
         }
 
         Course course = new Course("Object Oriented Programming", "Mr. John");
