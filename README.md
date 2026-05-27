@@ -84,7 +84,7 @@ StudentManagementSystem/
 - **Java** — the one and only
 - **IntelliJ IDEA** — our IDE of choice
 - **Git & GitHub** — for collaboration and version control
-- **A lot of debugging** — the real MVP 😅
+
 
 ---
 
