@@ -2,7 +2,7 @@
 
 # 🎓 Student Management System
 
-> *A Java OOP project built with purpose, curiosity, and a lot of coffee.*
+> *A Java OOP project built with purpose and  curiosity.*
 
 
 
