@@ -10,11 +10,38 @@ public class Main {
         System.out.println("   Welcome to the Student Management System ");
         System.out.println("============================================");
 
+        // Ask student type
         System.out.print("\nAre you an undergraduate or graduate student? (u/g): ");
         String type = input.nextLine().trim().toLowerCase();
 
+        // Ask name
         System.out.print("What is your name? ");
         String name = input.nextLine();
+
+        // Ask ID number (4 digits only)
+        System.out.print("Enter your 4-digit ID number:");
+        String idNumber = input.nextLine().trim();
+
+        // Ask year
+        System.out.print("Enter your enrollment year:");
+        String year = input.nextLine().trim();
+
+        // Ask department
+        System.out.println("Select your department:");
+        System.out.println("  1 - Software Engineering");
+        System.out.println("  2 - Information Technology");
+        System.out.print("Enter choice (1 or 2): ");
+        String deptChoice = input.nextLine().trim();
+
+        String department;
+        if (deptChoice.equals("1")) {
+            department = "Software Engineering";
+        } else if (deptChoice.equals("2")) {
+            department = "Information Technology";
+        } else {
+            System.out.println("\nInvalid department choice. Defaulting to Software Engineering.");
+            department = "Software Engineering";
+        }
 
         // Randomly generate grade 0-100
         double grade = rand.nextInt(101);
@@ -31,23 +58,27 @@ public class Main {
         System.out.println("\nHello, " + name + "! Let's pull up your details...");
 
         if (type.equals("u")) {
-            UndergraduateStudent ug = new UndergraduateStudent(name, 101, grade, "Software Engineering");
-            Student s1 = ug;
+            // Build undergraduate ID: BITS/UGR/1234/2023
+            String studentId = "BITS/UGR/" + idNumber + "/" + year;
+
+            UndergraduateStudent ug = new UndergraduateStudent(name, studentId, grade, department, 1);
             System.out.println("\n===== YOUR STUDENT DETAILS =====");
-            s1.displayInfo();
-            System.out.println("Your Letter Grade: " + letterGrade);
+            ug.displayInfo();
+            System.out.println("Your Letter Grade : " + letterGrade);
             System.out.println("\nTotal Students Registered So Far: " + Student.getTotalStudents());
 
         } else if (type.equals("g")) {
-            GraduateStudent grad = new GraduateStudent(name, 202, grade, "Artificial Intelligence");
-            Student s2 = grad;
+            // Build graduate ID: BITS/GRAD/1234/2023
+            String studentId = "BITS/GRAD/" + idNumber + "/" + year;
+
+            GraduateStudent grad = new GraduateStudent(name, studentId, grade, department);
             System.out.println("\n===== YOUR STUDENT DETAILS =====");
-            s2.displayInfo();
-            System.out.println("Your Letter Grade: " + letterGrade);
+            grad.displayInfo();
+            System.out.println("Your Letter Grade : " + letterGrade);
             System.out.println("\nTotal Students Registered So Far: " + Student.getTotalStudents());
 
         } else {
-            System.out.println("\nOops That wasn't a valid option. Please enter 'u' for undergraduate or 'g' for graduate.");
+            System.out.println("\nOops! That wasn't a valid option. Please enter 'u' for undergraduate or 'g' for graduate.");
         }
 
         Course course = new Course("Object Oriented Programming", "Mr. John");

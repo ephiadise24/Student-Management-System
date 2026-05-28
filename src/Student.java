@@ -1,33 +1,34 @@
-public class Student {
+public abstract class Student {
 
-    // These fields are shared by every student
-    private final String name;
-    private final int studentId;
+    // Private fields (Encapsulation)
+    private String name;
+    private String id;       // Changed from int to String
     private double grade;
 
-    // Static counter — belongs to the CLASS, counts all students created
+    // Static field to count total students
     private static int totalStudents = 0;
 
-    // Constructor — runs when we do "new Student(...)"
-    public Student(String name, int studentId, double grade) {
-        this.name = name;
-        this.studentId = studentId;
+    // Constructor
+    public Student(String name, String id, double grade) {
+        this.name  = name;
+        this.id    = id;
         this.grade = grade;
-        totalStudents++;                // Every time a student is created, add 1
+        totalStudents++;
     }
 
-    // Getters — allows other classes to READ private fields
-    public String getName() { return name; }
-    public int getStudentId() { return studentId; }
+    // Getters
+    public String getName()  { return name; }
+    public String getId()    { return id; }
     public double getGrade() { return grade; }
 
-    // Static method — called on the CLASS not an object
+    // Setters
+    public void setName(String name)   { this.name  = name; }
+    public void setId(String id)       { this.id    = id; }
+    public void setGrade(double grade) { this.grade = grade; }
+
+    // Static method to get total students
     public static int getTotalStudents() { return totalStudents; }
 
-    // This method will be OVERRIDDEN by child classes
-    public void displayInfo() {
-        System.out.println("Name: " + name);
-        System.out.println("ID: " + studentId);
-        System.out.println("Grade: " + grade);
-    }
+    // Abstract method — every subclass MUST override this
+    public abstract void displayInfo();
 }
