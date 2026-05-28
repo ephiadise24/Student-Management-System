@@ -53,7 +53,7 @@ public class Main {
         else if (grade >= 70) letterGrade = "C";
         else if (grade >= 60) letterGrade = "D";
         else if (grade >= 50) letterGrade = "F";
-        else if  (grade <=50) letterGrade = "NG";
+
 
         System.out.println("\nHello, " + name + "! Let's pull up your details...");
 
@@ -81,7 +81,7 @@ public class Main {
             System.out.println("\nOops! That wasn't a valid option. Please enter 'u' for undergraduate or 'g' for graduate.");
         }
 
-        Course course = new Course("Object Oriented Programming", "Mr. John");
+        Course course = new Course("Object Oriented Programming", "Mr. Habtamu");
         System.out.println("\n===== YOUR COURSE INFORMATION =====");
         course.displayCourse();
 
