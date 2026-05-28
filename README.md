@@ -22,7 +22,7 @@ It manages undergraduate and graduate students, tracks grades, and demonstrates 
 
 ## 🎯 What We Set Out to Do
 
-We didn't just want to write code that compiles. We wanted to actually *understand* it. Here's what we were aiming for:
+We didn't just want to write code that compiles. We wanted to actually understand it. Here's what we were aiming for:
 
 - ✅ Get comfortable with Java OOP from the ground up
 - ✅ Understand how classes and objects relate to real-world things
@@ -49,7 +49,7 @@ Here's what the system actually does when you run it:
 
 ## 🧠 OOP Concepts in Action
 
-This is where it gets interesting. Every concept below isn't just *mentioned* — it's actually **used and demonstrated** in the code:
+This is where it gets interesting. Every concept below isn't just *mentioned — it's actually **used and demonstrated** in the code:
 
 | 💡 Concept | 🔧 How We Used It |
 |---|---|
