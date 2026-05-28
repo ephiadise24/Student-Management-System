@@ -30,5 +30,6 @@ public abstract class Student {
     public static int getTotalStudents() { return totalStudents; }
 
     // Abstract method — every subclass MUST override this
-    public abstract void displayInfo();
+    public void displayInfo() {
+    }
 }

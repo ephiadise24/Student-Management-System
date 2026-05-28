@@ -5,25 +5,23 @@ public class GraduateStudent extends Student {
     // Constructor
     public GraduateStudent(
             String name,
-            int Studentid,
+            String id,
             double grade,
             String researchTopic
     ) {
-
-        super(name, Studentid, grade);
-
+        super(name, id, grade);
         this.researchTopic = researchTopic;
     }
+
+    // Getter and Setter
+    public String getResearchTopic() { return researchTopic; }
+    public void setResearchTopic(String researchTopic) { this.researchTopic = researchTopic; }
 
     // Method overriding
     @Override
     public void displayInfo() {
-
-        super.displayInfo();   // reuses Student's display code
-
-        System.out.println("Research Topic: "
-                + researchTopic);
-
-        System.out.println("Level: Graduate");
+        super.displayInfo();
+        System.out.println("Research Topic : " + researchTopic);
+        System.out.println("Level          : Graduate");
     }
 }
