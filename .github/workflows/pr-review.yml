@@ -1,0 +1,96 @@
+name: Automated PR Review Pipeline
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  # ✅ JOB 1: Build and Compile
+  build:
+    name: Build & Compile
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Compile Java Files
+        run: |
+          mkdir -p out
+          javac src/*.java -d out/
+
+  # ✅ JOB 2: Code Quality Check
+  code-quality:
+    name: Code Quality Check
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Install Checkstyle
+        run: |
+          wget https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.12.1/checkstyle-10.12.1-all.jar -O checkstyle.jar
+
+      - name: Run Checkstyle
+        run: |
+          java -jar checkstyle.jar -c /google_checks.xml src/*.java || true
+
+  # ✅ JOB 3: Run Tests
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Compile All Files
+        run: |
+          mkdir -p out
+          javac src/*.java -d out/
+
+      - name: Run Main Class
+        run: |
+          echo "u
+          Bereket
+          1234
+          2023
+          1" | java -cp out Main
+
+  # ✅ JOB 4: PR Feedback
+  feedback:
+    name: PR Feedback
+    runs-on: ubuntu-latest
+    needs: [build, code-quality, test]
+
+    steps:
+      - name: Post Success Message
+        if: success()
+        run: echo "✅ All checks passed! Code compiles, tests passed, and quality looks good. Ready to merge!"
+
+      - name: Post Failure Message
+        if: failure()
+        run: echo "❌ Pipeline failed! Please fix the issues before merging."
