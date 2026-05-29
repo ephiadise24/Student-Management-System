@@ -1,8 +1,8 @@
-public abstract class Student {
+public class Student {
 
     // Private fields (Encapsulation)
     private String name;
-    private String id;       // Changed from int to String
+    private String id;
     private double grade;
 
     // Static field to count total students
@@ -29,7 +29,10 @@ public abstract class Student {
     // Static method to get total students
     public static int getTotalStudents() { return totalStudents; }
 
-    // Abstract method — every subclass MUST override this
+    // Base display method — subclasses call super.displayInfo()
     public void displayInfo() {
+        System.out.println("Name  : " + name);
+        System.out.println("ID    : " + id);
+        System.out.println("Grade : " + grade);
     }
 }
