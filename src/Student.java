@@ -13,7 +13,7 @@ public class Student {
         this.name  = name;
         this.id    = id;
         this.grade = grade;
-        totalStudents++;
+        totalStudents++; // every time a stuent is created, this number goes up
     }
 
     // Getters
@@ -29,7 +29,7 @@ public class Student {
     // Static method to get total students
     public static int getTotalStudents() { return totalStudents; }
 
-    // Base display method — subclasses call super.displayInfo()
+    // Base display method — subclasses call super.displayInfo() or // subclass build on top of this
     public void displayInfo() {
         System.out.println("Name  : " + name);
         System.out.println("ID    : " + id);

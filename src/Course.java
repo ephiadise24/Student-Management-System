@@ -1,11 +1,12 @@
 public class Course {
 
-    private String courseName;
+    private String courseName; // unique course has nothing to do with students it only stores course info
 
-    private String instructor;
+    private String instructor; // unique course has nothing to do with students it only stores course info
+
 
     // Constructor
-    public Course(
+    public Course( // set both fields
             String courseName,
             String instructor
     ) {
@@ -16,7 +17,7 @@ public class Course {
     }
 
     // Method
-    public void displayCourse() {
+    public void displayCourse() { // this one is unique because it prints course name and instructor
 
         System.out.println("Course: "
                 + courseName);
