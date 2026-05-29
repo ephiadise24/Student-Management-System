@@ -94,7 +94,7 @@ This project was built by two students who genuinely enjoyed figuring it out:
 
 | 👤 Name | 🐙 GitHub |
 |---|---|
-| **Ephrem Adise** | [@EphremAdise](https://github.com/EphremAdise) |
+| **Ephrem Adise**  | [@ephiadise24](https://github.com/ephiadise24) |
 | **Bereket Elias** | [@Bereket18x2](https://github.com/Bereket18x2) |
 
 ---
