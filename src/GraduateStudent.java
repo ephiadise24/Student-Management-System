@@ -1,5 +1,4 @@
- // inherit everything from student
-public class GraduateStudent extends Student {
+public class GraduateStudent extends Student { // inherit everything from student
 
     private String researchTopic; // unique to graduate because of the research topic
 

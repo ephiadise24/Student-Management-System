@@ -54,7 +54,6 @@ public class Main {
         else if (grade >= 60) letterGrade = "D";
         else if (grade >= 50) letterGrade = "F";
 
-
         System.out.println("\nHello, " + name + "! Let's pull up your details...");
 
         if (type.equals("u")) {
@@ -89,4 +88,4 @@ public class Main {
 
         input.close();
     }
-}
+}      // testing pipeline

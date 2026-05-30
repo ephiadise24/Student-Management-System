@@ -13,7 +13,7 @@ public class Student {
         this.name  = name;
         this.id    = id;
         this.grade = grade;
-        totalStudents++; // every time a stuent is created, this number goes up
+        totalStudents++; // every time a student is created, this number goes up
     }
 
     // Getters
